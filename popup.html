@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Lat/Long Copier</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <section>
+    <h2>This page</h2>
+    <div id="page" class="row muted">Checking…</div>
+  </section>
+
+  <section>
+    <button id="mine" class="wide">Copy my current location</button>
+  </section>
+
+  <section>
+    <h2>Address or place</h2>
+    <form id="search" class="row">
+      <input id="query" type="text" placeholder="e.g. Sky Tower, Auckland" autocomplete="off" autofocus>
+      <button type="submit">Find</button>
+    </form>
+  </section>
+
+  <section id="result" hidden>
+    <div id="result-label" class="muted small"></div>
+    <div class="row">
+      <code id="result-coords"></code>
+      <button id="result-copy">Copy</button>
+    </div>
+  </section>
+
+  <div id="status" class="small" role="status"></div>
+
+  <footer class="row small">
+    <select id="format" title="Format"></select>
+    <label>Decimals <input id="decimals" type="number" min="0" max="8"></label>
+  </footer>
+
+  <script type="module" src="popup.js"></script>
+</body>
+</html>

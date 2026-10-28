@@ -1,0 +1,43 @@
+{
+  "manifest_version": 3,
+  "name": "Lat/Long Copier",
+  "version": "1.0.0",
+  "description": "Copy the latitude and longitude of a map location, your current position, or an address to the clipboard.",
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "action": {
+    "default_title": "Copy lat/long",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "permissions": [
+    "activeTab",
+    "contextMenus",
+    "offscreen",
+    "storage",
+    "geolocation",
+    "clipboardWrite"
+  ],
+  "host_permissions": [
+    "https://nominatim.openstreetmap.org/*"
+  ],
+  "commands": {
+    "copy-from-tab": {
+      "suggested_key": {
+        "default": "Alt+Shift+L"
+      },
+      "description": "Copy lat/long from the current map page"
+    }
+  }
+}
